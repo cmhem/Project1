@@ -4,10 +4,10 @@ Azure Setup
 
 The files in this repository were used to configure the network depicted below.
 
-!(https://github.com/cmhem/Project1/blob/main/Diagrams/withelk.jpg)
+![stuff](https://github.com/cmhem/Project1/blob/main/Diagrams/withelk.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the .yml file may be used to install only certain pieces of it, such as Filebeat.
-
+'''yaml
  ---
 - name: Configure Elk VM with Docker
   hosts: elk
@@ -59,7 +59,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
       systemd:
         name: docker
         enabled: yes
-
+'''
 
 This document contains the following details:
 - Description of the Topology
@@ -136,9 +136,5 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the playbook file to the ansible.
 - Update the ansible hosts file to include <IP address> ansible_python_interpreter=/usr/bin/python3
-- Run the playbook, and navigate to the webpage to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Segment the IP adresses into sections to make it easier to manage different groups of machines better
+- Run the playbook, and navigate to the http://[your.VM.IP]:5601/app/kibana to check that the installation worked as expected.
